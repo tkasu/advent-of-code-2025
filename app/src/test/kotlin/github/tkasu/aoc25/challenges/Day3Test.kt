@@ -5,6 +5,7 @@ package github.tkasu.aoc25.challenges
 
 import kotlin.test.Test
 import github.tkasu.aoc25.challenges.day3.Part1
+import github.tkasu.aoc25.challenges.day3.Part2
 import kotlin.test.assertEquals
 
 class Day3Test {
@@ -12,6 +13,12 @@ class Day3Test {
     fun `part1 returns correct answer`() {
         val result = Part1.solveFromResource()
         assertEquals(357L, result)
+    }
+
+    @Test
+    fun `part2 returns correct answer`() {
+        val result = Part2.solveFromResource()
+        assertEquals(3121910778619, result)
     }
 
 }
