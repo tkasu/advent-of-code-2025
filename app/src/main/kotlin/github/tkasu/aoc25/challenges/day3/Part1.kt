@@ -6,22 +6,7 @@ import github.tkasu.aoc25.challenges.day3.Part1.solveFromResource
 object Part1 {
 
     fun solve(banks: List<List<Int>>): Long {
-        var sum = 0L
-        for (joltages in banks) {
-            val maxFirstJoltage = joltages.max()
-            val maxFirstJoltageDropLast = joltages.dropLast(1).max()
-            val maxJoltagePositions = joltages
-                .mapIndexed { index, joltage -> if (joltage == maxFirstJoltageDropLast) index else null }
-                .filterNotNull()
-            val maxJoltage = if (maxFirstJoltage == maxFirstJoltageDropLast && maxJoltagePositions.size > 1) {
-                10 * maxFirstJoltageDropLast + maxFirstJoltageDropLast
-            } else {
-                val maxSecondJoltage = joltages.drop(maxJoltagePositions.first() + 1).max()
-                10 * maxFirstJoltageDropLast + maxSecondJoltage
-            }
-            sum += maxJoltage
-        }
-        return sum
+        return Part2.solve(banks, 2)
     }
 
     fun parse(input: List<String>): List<List<Int>> {
