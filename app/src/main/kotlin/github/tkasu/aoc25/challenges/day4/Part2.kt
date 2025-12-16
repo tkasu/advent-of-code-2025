@@ -1,11 +1,12 @@
 package github.tkasu.aoc25.challenges.day4
 
 import github.tkasu.aoc25.utils.files
-import github.tkasu.aoc25.challenges.day4.Part1.solveFromResource
+import github.tkasu.aoc25.challenges.day4.Part2.solveFromResource
 
-object Part1 {
+object Part2{
+
     fun solve(grid: Grid): Int {
-        return grid.forklift().second
+        return grid.forkliftIterativelyMutable()
     }
 
     fun parse(input: List<String>): Grid {
